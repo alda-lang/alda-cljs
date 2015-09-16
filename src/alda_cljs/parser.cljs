@@ -1,10 +1,5 @@
 (ns alda-cljs.parser
-  (:require [instaparse.core :as insta])
-  (:refer-clojure :exclude [print])
-  (:require-macros [alda-cljs.macros :refer (slurp)]))
-
-(def ^:export alda-parser
-  (insta/parser (slurp "grammar/alda.bnf")))
+  (:require [alda.parser :refer (parse-input)]))
 
 (defn ^:export parse
   "Parse a string of Alda code.
@@ -14,7 +9,7 @@
    
    If {print: true} is provided as a second argument, also prints the result to the console in a more readable way."
   [s & [opts]]
-  (let [result (alda-parser s)]
+  (let [result (parse-input s)]
     (when (and opts (.-print opts)) (prn result))
     (clj->js result)))
 
