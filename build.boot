@@ -3,7 +3,7 @@
   :resource-paths #{"sandbox"}
   :dependencies '[[org.clojure/clojure                 "1.7.0"]
                   [org.clojure/clojurescript           "1.7.48"]
-                  [alda                                "0.6.1"]
+                  [alda                                "0.7.0-SNAPSHOT"]
                   [adzerk/bootlaces                    "0.1.12"   :scope "test"]
                   [adzerk/boot-cljs                    "1.7.48-3" :scope "test"]
                   [adzerk/boot-reload                  "0.3.1"    :scope "test"]])
